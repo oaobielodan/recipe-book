@@ -42,20 +42,12 @@ li {
 .book .page {
     width: 50%;
     height: 100%;
-
-    transition: .7s;
-    transform-style: preserve-3d;
-    transform:rotateY(0deg);
-    backface-visibility:hidden;
-    z-index:1;
 }
 
-.book .page.page-left {
+.book .page-left {
     display: inline;
     float: left;
-
     overflow-y: scroll;
-    transform-origin: right;
 
     background-color: antiquewhite;
     border-right: 2px solid #664e3c;
@@ -78,76 +70,60 @@ li {
     padding: 10px;
 }
 
-.book .page.page-right {
+.book .page-right {
     display: inline;
     float: right;
     padding: 10px;
-
-    transform-origin: left center;
 
     background-color: antiquewhite;
     border-left: 2px solid #664e3c;
 }
 
-.book .page.three {
-    display: inline;
-    float: right;
-    padding: 10px;
+/* control styles */
 
-    transform-origin: right center;
-
-    background-color: antiquewhite;
-    border-left: 2px solid #664e3c;
-
-    content:"Ingredients:";
-}
-
-.book .page.ongoing {
-    z-index:2;
-}
-
-.book .ongoing.page-left.page.move {
-    transform:rotateY(165deg);
-}
-
-.book .ongoing.page-right.page.move {
-    transform:rotateY(-165deg);
-}
-
-.book .next.page-left.page {
-    transform:rotateY(165deg);
-}
-
-.book .next.page-left.page.move {
-    transform:rotateY(0deg);
-}
-  
-.book .back.page-right.page {
-    transform:rotateY(-165deg);
-}
-  
-.book .back.page-right.page.move {
-    transform:rotateY(0deg);
-}
-  
 .controls {
     position: absolute;
-    top: 950px;
+    top: 850px;
     text-align: center;
-    width:500px;
+    width: 500px;
 }
   
-.controls button {
-    font-size:20px;
-    margin:0 5px;
-    padding:5px 20px;
-    border: none;
-    background-color: #664e3c;
-    transition: .3s;
-    cursor: pointer;
+.controls a {
+    font-size: 20px;
+    color: #664e3c;
 }
   
-.controls button:hover {
-    background-color: #b1a7a6;
+.controls a:hover {
+    color: #b1a7a6;
     color: white;
+}
+
+/* appendix styles */
+
+.appendix {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+.appendix .title {
+    font-family: Handwritting;
+    font-size: 75px;
+}
+
+.appendix .title p {
+    margin: 0;
+}
+
+.appendix li {
+    font-family: Handwritting;
+    font-size: 50px;
+}
+
+.appendix a {
+    color: #664e3c;
+}
+
+.appendix a:hover {
+    color: #664e3c91;
 }
