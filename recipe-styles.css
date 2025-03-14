@@ -1,0 +1,153 @@
+@font-face { 
+    font-family: Handwritting;
+    src: url('Myfont-Regular.otf');
+}
+
+* { box-sizing: border-box; }
+
+html {
+    background-image: url(media/recipe-background.jpg);
+    /* background-size: cover; */
+    background-size: 100vw 100vh;
+    margin: 0;
+    height: 100vh;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li {
+    font-family: Handwritting;
+    font-size: 20px;
+}
+
+.book {
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 2000px;
+
+    margin: auto;
+    width: 75%;
+    height: 80%;
+
+    border: 5px solid #664e3c;
+}
+
+.book .page {
+    width: 50%;
+    height: 100%;
+
+    transition: .7s;
+    transform-style: preserve-3d;
+    transform:rotateY(0deg);
+    backface-visibility:hidden;
+    z-index:1;
+}
+
+.book .page.page-left {
+    display: inline;
+    float: left;
+
+    overflow-y: scroll;
+    transform-origin: right;
+
+    background-color: antiquewhite;
+    border-right: 2px solid #664e3c;
+}
+
+.page-left .media {
+    height: 50%;
+    width: 75%;
+    margin: auto;
+    padding-top: 30px;
+}
+
+.media img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.page-left .notes {
+    padding: 10px;
+}
+
+.book .page.page-right {
+    display: inline;
+    float: right;
+    padding: 10px;
+
+    transform-origin: left center;
+
+    background-color: antiquewhite;
+    border-left: 2px solid #664e3c;
+}
+
+.book .page.three {
+    display: inline;
+    float: right;
+    padding: 10px;
+
+    transform-origin: right center;
+
+    background-color: antiquewhite;
+    border-left: 2px solid #664e3c;
+
+    content:"Ingredients:";
+}
+
+.book .page.ongoing {
+    z-index:2;
+}
+
+.book .ongoing.page-left.page.move {
+    transform:rotateY(165deg);
+}
+
+.book .ongoing.page-right.page.move {
+    transform:rotateY(-165deg);
+}
+
+.book .next.page-left.page {
+    transform:rotateY(165deg);
+}
+
+.book .next.page-left.page.move {
+    transform:rotateY(0deg);
+}
+  
+.book .back.page-right.page {
+    transform:rotateY(-165deg);
+}
+  
+.book .back.page-right.page.move {
+    transform:rotateY(0deg);
+}
+  
+.controls {
+    position: absolute;
+    top: 950px;
+    text-align: center;
+    width:500px;
+}
+  
+.controls button {
+    font-size:20px;
+    margin:0 5px;
+    padding:5px 20px;
+    border: none;
+    background-color: #664e3c;
+    transition: .3s;
+    cursor: pointer;
+}
+  
+.controls button:hover {
+    background-color: #b1a7a6;
+    color: white;
+}
